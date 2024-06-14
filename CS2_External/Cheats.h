@@ -10,6 +10,7 @@
 namespace Cheats
 {
 	void Menu();
+	void New_Menu();
 	void RadarSetting(Base_Radar& Radar);
 	void Run();
 }

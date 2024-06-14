@@ -18,8 +18,23 @@
 * @date			: 2023/9/17	11:22
 ****************************************************/
 
+inline ImFont* ico_subtab;
+inline ImFont* tab_text1;
+inline ImFont* ico = nullptr;
+inline ImFont* tab_text2;
+inline float dpi_scale = 1.0f;
+
 namespace OSImGui
 {
+	inline ImFont* ico_2 = nullptr;
+	inline ImFont* ico_minimize = nullptr;
+	inline ImFont* tab_text;
+	inline ImFont* tab_text3;
+	inline ImFont* ico_logo;
+	
+	
+	
+
 	class D3DDevice
 	{
 	public:
@@ -36,6 +51,10 @@ namespace OSImGui
 	};
 
 	static D3DDevice g_Device;
+
+
+	
+
 
 	enum WindowType
 	{
@@ -61,6 +80,9 @@ namespace OSImGui
 	{
 	public:
 		// 回调函数
+
+		
+
 		std::function<void()> CallBackFn = nullptr;
 		// 退出标识
 		bool EndFlag = false;

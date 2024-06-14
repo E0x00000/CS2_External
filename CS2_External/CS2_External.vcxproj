@@ -146,11 +146,14 @@
     <ClInclude Include="GlobalVars.h" />
     <ClInclude Include="MenuConfig.hpp" />
     <ClInclude Include="Offsets.h" />
+    <ClInclude Include="OS-ImGui\imgui\color.h" />
+    <ClInclude Include="OS-ImGui\imgui\font.h" />
     <ClInclude Include="OS-ImGui\imgui\imconfig.h" />
     <ClInclude Include="OS-ImGui\imgui\imgui.h" />
     <ClInclude Include="OS-ImGui\imgui\imgui_impl_dx11.h" />
     <ClInclude Include="OS-ImGui\imgui\imgui_impl_win32.h" />
     <ClInclude Include="OS-ImGui\imgui\imgui_internal.h" />
+    <ClInclude Include="OS-ImGui\imgui\imgui_settings.h" />
     <ClInclude Include="OS-ImGui\imgui\imstb_rectpack.h" />
     <ClInclude Include="OS-ImGui\imgui\imstb_textedit.h" />
     <ClInclude Include="OS-ImGui\imgui\imstb_truetype.h" />
@@ -177,7 +180,6 @@
     <ClCompile Include="main.cpp" />
     <ClCompile Include="Offsets.cpp" />
     <ClCompile Include="OS-ImGui\imgui\imgui.cpp" />
-    <ClCompile Include="OS-ImGui\imgui\imgui_demo.cpp" />
     <ClCompile Include="OS-ImGui\imgui\imgui_draw.cpp" />
     <ClCompile Include="OS-ImGui\imgui\imgui_impl_dx11.cpp" />
     <ClCompile Include="OS-ImGui\imgui\imgui_impl_win32.cpp" />

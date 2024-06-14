@@ -263,14 +263,12 @@ namespace OSImGui
     {
         ImDrawList* DrawList = ImGui::GetBackgroundDrawList();
         ImDrawFlags Flags = (Rounding > 0.f) ? ImDrawFlags_RoundCornersMask_ : ImDrawFlags_None;
-        DrawList->AddShadowRect(Pos.ToImVec2(), { Pos.x + Size.x,Pos.y + Size.y }, ShadowColor, ShadowThickness, ShadowOffset.ToImVec2(), Flags, Rounding);
         DrawList->AddRectFilled(Pos.ToImVec2(), { Pos.x + Size.x,Pos.y + Size.y }, RectColor, Rounding);
     }
 
     void OSImGui::ShadowCircle(Vec2 Pos, float Radius, ImColor CircleColor, ImColor ShadowColor, float ShadowThickness, Vec2 ShadowOffset, int Num)
     {
         ImDrawList* DrawList = ImGui::GetBackgroundDrawList();
-        DrawList->AddShadowCircle(Pos.ToImVec2(), Radius, ShadowColor, ShadowThickness, ShadowOffset.ToImVec2(), ImDrawFlags_None, Num);
         DrawList->AddCircleFilled(Pos.ToImVec2(), Radius, CircleColor, Num);
     }
 
@@ -348,7 +346,6 @@ namespace OSImGui
         // Render grab
         if (grab_bb.Max.x > grab_bb.Min.x)
         {
-            window->DrawList->AddShadowCircle(grab_bb.GetCenter(), grab_radius, ImColor(30, 30, 30, 255), 9, { 0,0 });
             window->DrawList->AddCircleFilled(grab_bb.GetCenter(), grab_radius, ImColor(220, 220, 220, 255));
         }
 

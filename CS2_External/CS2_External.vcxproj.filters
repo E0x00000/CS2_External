@@ -39,30 +39,6 @@
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="OS-ImGui\imgui\imconfig.h">
-      <Filter>OS-ImGui\imgui</Filter>
-    </ClInclude>
-    <ClInclude Include="OS-ImGui\imgui\imgui.h">
-      <Filter>OS-ImGui\imgui</Filter>
-    </ClInclude>
-    <ClInclude Include="OS-ImGui\imgui\imgui_impl_dx11.h">
-      <Filter>OS-ImGui\imgui</Filter>
-    </ClInclude>
-    <ClInclude Include="OS-ImGui\imgui\imgui_impl_win32.h">
-      <Filter>OS-ImGui\imgui</Filter>
-    </ClInclude>
-    <ClInclude Include="OS-ImGui\imgui\imgui_internal.h">
-      <Filter>OS-ImGui\imgui</Filter>
-    </ClInclude>
-    <ClInclude Include="OS-ImGui\imgui\imstb_rectpack.h">
-      <Filter>OS-ImGui\imgui</Filter>
-    </ClInclude>
-    <ClInclude Include="OS-ImGui\imgui\imstb_textedit.h">
-      <Filter>OS-ImGui\imgui</Filter>
-    </ClInclude>
-    <ClInclude Include="OS-ImGui\imgui\imstb_truetype.h">
-      <Filter>OS-ImGui\imgui</Filter>
-    </ClInclude>
     <ClInclude Include="OS-ImGui\OS-ImGui.h">
       <Filter>OS-ImGui</Filter>
     </ClInclude>
@@ -137,29 +113,19 @@
     </ClInclude>
     <ClInclude Include="a2x\client.h" />
     <ClInclude Include="a2x\offsets.h" />
+    <ClInclude Include="OS-ImGui\imgui\color.h" />
+    <ClInclude Include="OS-ImGui\imgui\imgui.h" />
+    <ClInclude Include="OS-ImGui\imgui\imgui_internal.h" />
+    <ClInclude Include="OS-ImGui\imgui\imgui_settings.h" />
+    <ClInclude Include="OS-ImGui\imgui\imgui_impl_dx11.h" />
+    <ClInclude Include="OS-ImGui\imgui\imgui_impl_win32.h" />
+    <ClInclude Include="OS-ImGui\imgui\imconfig.h" />
+    <ClInclude Include="OS-ImGui\imgui\imstb_rectpack.h" />
+    <ClInclude Include="OS-ImGui\imgui\imstb_textedit.h" />
+    <ClInclude Include="OS-ImGui\imgui\imstb_truetype.h" />
+    <ClInclude Include="OS-ImGui\imgui\font.h" />
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="OS-ImGui\imgui\imgui.cpp">
-      <Filter>OS-ImGui\imgui</Filter>
-    </ClCompile>
-    <ClCompile Include="OS-ImGui\imgui\imgui_demo.cpp">
-      <Filter>OS-ImGui\imgui</Filter>
-    </ClCompile>
-    <ClCompile Include="OS-ImGui\imgui\imgui_draw.cpp">
-      <Filter>OS-ImGui\imgui</Filter>
-    </ClCompile>
-    <ClCompile Include="OS-ImGui\imgui\imgui_impl_dx11.cpp">
-      <Filter>OS-ImGui\imgui</Filter>
-    </ClCompile>
-    <ClCompile Include="OS-ImGui\imgui\imgui_impl_win32.cpp">
-      <Filter>OS-ImGui\imgui</Filter>
-    </ClCompile>
-    <ClCompile Include="OS-ImGui\imgui\imgui_tables.cpp">
-      <Filter>OS-ImGui\imgui</Filter>
-    </ClCompile>
-    <ClCompile Include="OS-ImGui\imgui\imgui_widgets.cpp">
-      <Filter>OS-ImGui\imgui</Filter>
-    </ClCompile>
     <ClCompile Include="OS-ImGui\OS-ImGui.cpp">
       <Filter>OS-ImGui</Filter>
     </ClCompile>
@@ -205,5 +171,11 @@
     <ClCompile Include="GlobalVars.cpp">
       <Filter>Cheats\Data</Filter>
     </ClCompile>
+    <ClCompile Include="OS-ImGui\imgui\imgui_draw.cpp" />
+    <ClCompile Include="OS-ImGui\imgui\imgui.cpp" />
+    <ClCompile Include="OS-ImGui\imgui\imgui_widgets.cpp" />
+    <ClCompile Include="OS-ImGui\imgui\imgui_impl_win32.cpp" />
+    <ClCompile Include="OS-ImGui\imgui\imgui_impl_dx11.cpp" />
+    <ClCompile Include="OS-ImGui\imgui\imgui_tables.cpp" />
   </ItemGroup>
 </Project>
