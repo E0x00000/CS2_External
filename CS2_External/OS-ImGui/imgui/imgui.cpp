@@ -5710,7 +5710,7 @@ void ImGui::EndChild()
 
 inline ImVec4 child_background = ImColor(20, 20, 20, 255);
 inline ImVec4 border_child = ImColor(28, 27, 32, 255);
-inline ImVec4 child_gradient = ImColor(218, 96, 21, 255);
+inline ImVec4 child_gradient = ImColor(156, 21, 218, 255);
 
 inline ImVec4 border_child_default = ImColor(20, 20, 20, 255);
 inline ImVec4 child_name = ImColor(62, 61, 65, 255);

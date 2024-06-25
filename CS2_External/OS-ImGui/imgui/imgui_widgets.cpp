@@ -369,15 +369,15 @@ inline ImVec4 text = ImColor(66, 65, 70, 255);
 
 inline ImVec4 child_background = ImColor(22, 21, 26, 255);
 inline ImVec4 border_child = ImColor(28, 27, 32, 255);
-inline ImVec4 child_gradient = ImColor(218, 96, 21, 255);
+inline ImVec4 child_gradient = ImColor(129, 21, 218, 255);
 
 inline ImVec4 border_child_default = ImColor(22, 21, 26, 255);
 inline ImVec4 child_name = ImColor(62, 61, 65, 255);
 
 ///////////////////////////////////////////// GRADIENT
 
-inline ImVec4 checkbox_gradient_start = ImColor(218, 96, 21, 255);
-inline ImVec4 checkbox_gradient_end = ImColor(238, 96, 21, 255);
+inline ImVec4 checkbox_gradient_start = ImColor(129, 21, 218, 255);
+inline ImVec4 checkbox_gradient_end = ImColor(119, 21, 238, 255);
 
 ///////////////////////////////////////////// CHECKBOXES
 

@@ -12,17 +12,17 @@ namespace colors {
     inline ImVec4 Tab_Child = ImColor(15, 15, 15, 255);
     inline ImVec4 Tab_Border = ImColor(26, 26, 26, 255);
 
-    inline ImVec4 Tab_Selected = ImColor(223, 99, 25,255);
+    inline ImVec4 Tab_Selected = ImColor(87, 60, 145,255);
     inline ImVec4 Tab_Hovered = ImColor(130, 130, 130, 255);
     inline ImVec4 Tab = ImColor(80, 80, 80, 255);
 
     inline ImVec4 Checkbox = ImColor(14, 14, 14, 255);
     inline ImVec4 Checkbox_Hovered = ImColor(12, 12, 12, 255);
-    inline ImVec4 Checkbox_Active = ImColor(218, 96, 21, 255);
+    inline ImVec4 Checkbox_Active = ImColor(139, 21, 218, 255);
 
-    inline ImVec4 Car_Slider = ImColor(221, 97, 23, 255);
-    inline ImVec4 Car_Slider_Hovered = ImColor(223, 99, 25, 255);
-    inline ImVec4 Car_Slider_Active = ImColor(223, 99, 25, 255);
+    inline ImVec4 Car_Slider = ImColor(115, 23, 221, 255);
+    inline ImVec4 Car_Slider_Hovered = ImColor(87, 60, 145, 255);
+    inline ImVec4 Car_Slider_Active = ImColor(87, 60, 145, 255);
 
     inline ImVec4 Slider = ImColor(16, 16, 16, 255);
     inline ImVec4 Slider_Hovered = ImColor(18, 18, 18, 255);

@@ -49,7 +49,7 @@ namespace MenuConfig
 	inline bool Shoot = false;// so that it doesn’t aim when the trigger hits
 
 	inline bool TeamCheck = true;
-	inline bool OBSBypass = true;
+	inline bool OBSBypass = false;
 
 	inline bool BunnyHop = false;
 	

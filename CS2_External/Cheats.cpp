@@ -276,7 +276,7 @@ void Cheats::New_Menu()
 		ImGui::PushStyleColor(ImGuiCol_ChildBg, ImVec4(0, 0, 0, 0));
 		ImGui::BeginChild("G-Tab", ImVec2(173 * dpi_scale, 790 * dpi_scale), false);
 		{
-			ImGui::GetForegroundDrawList()->AddText(OSImGui::tab_text3, 20 * dpi_scale, ImVec2(20 * dpi_scale + p.x, 12 * dpi_scale + p.y), ImColor(255, 255, 255, 255), "Unknowncheats");
+			ImGui::GetForegroundDrawList()->AddText(OSImGui::tab_text3, 20 * dpi_scale, ImVec2(20 * dpi_scale + p.x, 12 * dpi_scale + p.y), ImColor(255, 255, 255, 255), "Video Paste");
 			ImGui::GetWindowDrawList()->AddRectFilled(ImVec2(0 + p.x, 0 + p.y), ImVec2(273 * dpi_scale + p.x, 790 * dpi_scale + p.y), ImGui::GetColorU32(colors::Tab_Child), s.WindowRounding);
 
 			ImGui::SetCursorPosY(60);
@@ -564,9 +564,7 @@ void Cheats::Run()
 	auto CurTimePoint = std::chrono::steady_clock::now();
 
 	if (GetAsyncKeyState(VK_HOME)
-		&& CurTimePoint - LastTimePoint >= std::chrono::milliseconds(150))
-	{
-		// Check key state per 150ms once to avoid loop.
+		&& CurTimePoint - LastTimePoint >= std::chrono::milliseconds(150)){
 		MenuConfig::ShowMenu = !MenuConfig::ShowMenu;
 		LastTimePoint = CurTimePoint;
 	}
