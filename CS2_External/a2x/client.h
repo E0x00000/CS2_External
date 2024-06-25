@@ -1,10 +1,9 @@
 // Generated using https://github.com/a2x/cs2-dumper
-// 2024-06-14 00:23:35.869702 UTC
+// 2024-06-25 19:02:48.432952300 UTC
 
 #pragma once
 
 #include <cstddef>
-#include <cstdint>
 
 namespace cs2_dumper {
     namespace schemas {
@@ -2307,9 +2306,9 @@ namespace cs2_dumper {
                 constexpr std::ptrdiff_t m_CommandContext = 0x558; // C_CommandContext
                 constexpr std::ptrdiff_t m_nInButtonsWhichAreToggles = 0x5F0; // uint64
                 constexpr std::ptrdiff_t m_nTickBase = 0x5F8; // uint32
-                constexpr std::ptrdiff_t m_hPawn = 0x5FC; // CHandle<C_BasePlayerPawn>
+                constexpr std::ptrdiff_t m_hPawn = 0x5FC; // 
                 constexpr std::ptrdiff_t m_bKnownTeamMismatch = 0x600; // bool
-                constexpr std::ptrdiff_t m_hPredictedPawn = 0x604; // CHandle<C_BasePlayerPawn>
+                constexpr std::ptrdiff_t m_hPredictedPawn = 0x604; // 
                 constexpr std::ptrdiff_t m_nSplitScreenSlot = 0x608; // CSplitScreenSlot
                 constexpr std::ptrdiff_t m_hSplitOwner = 0x60C; // CHandle<CBasePlayerController>
                 constexpr std::ptrdiff_t m_hSplitScreenPlayers = 0x610; // CUtlVector<CHandle<CBasePlayerController>>
@@ -4616,7 +4615,7 @@ namespace cs2_dumper {
                 constexpr std::ptrdiff_t m_flTimeoutInterval = 0x560; // float32
                 constexpr std::ptrdiff_t m_bAsynchronouslySpawnEntities = 0x564; // bool
                 constexpr std::ptrdiff_t m_pOutputOnSpawned = 0x568; // CEntityIOOutput
-                constexpr std::ptrdiff_t m_clientOnlyEntityBehavior = 0x590; // PointTemplateClientOnlyEntityBehavior_t
+                constexpr std::ptrdiff_t m_clientOnlyEntityBehavior = 0x590; // PointTemplateClientOnlyEntityBeh
                 constexpr std::ptrdiff_t m_ownerSpawnGroupType = 0x594; // PointTemplateOwnerSpawnGroupType_t
                 constexpr std::ptrdiff_t m_createdSpawnGroupHandles = 0x598; // CUtlVector<uint32>
                 constexpr std::ptrdiff_t m_SpawnedEntityHandles = 0x5B0; // CUtlVector<CEntityHandle>
@@ -5010,7 +5009,7 @@ namespace cs2_dumper {
                 constexpr std::ptrdiff_t m_vecMins = 0x40; // Vector
                 constexpr std::ptrdiff_t m_vecMaxs = 0x4C; // Vector
                 constexpr std::ptrdiff_t m_usSolidFlags = 0x5A; // uint8
-                constexpr std::ptrdiff_t m_nSolidType = 0x5B; // SolidType_t
+                constexpr std::ptrdiff_t m_nSolidType = 0x5B; // 
                 constexpr std::ptrdiff_t m_triggerBloat = 0x5C; // uint8
                 constexpr std::ptrdiff_t m_nSurroundType = 0x5D; // SurroundingBoundsType_t
                 constexpr std::ptrdiff_t m_CollisionGroup = 0x5E; // uint8
@@ -5790,7 +5789,7 @@ namespace cs2_dumper {
                 constexpr std::ptrdiff_t m_explosionCustomEffect = 0x1010; // CUtlSymbolLarge
                 constexpr std::ptrdiff_t m_explosionCustomSound = 0x1018; // CUtlSymbolLarge
                 constexpr std::ptrdiff_t m_explosionModifier = 0x1020; // CUtlSymbolLarge
-                constexpr std::ptrdiff_t m_hPhysicsAttacker = 0x1028; // CHandle<C_BasePlayerPawn>
+                constexpr std::ptrdiff_t m_hPhysicsAttacker = 0x1028; // 
                 constexpr std::ptrdiff_t m_flLastPhysicsInfluenceTime = 0x102C; // GameTime_t
                 constexpr std::ptrdiff_t m_flDefaultFadeScale = 0x1030; // float32
                 constexpr std::ptrdiff_t m_hLastAttacker = 0x1034; // CHandle<C_BaseEntity>
