@@ -1,5 +1,5 @@
 // Generated using https://github.com/a2x/cs2-dumper
-// 2024-06-26 12:56:08.697289300 UTC
+// 2024-06-28 12:19:29.591449600 UTC
 
 #pragma once
 
@@ -2306,11 +2306,11 @@ namespace cs2_dumper {
                 constexpr std::ptrdiff_t m_CommandContext = 0x558; // C_CommandContext
                 constexpr std::ptrdiff_t m_nInButtonsWhichAreToggles = 0x5F0; // uint64
                 constexpr std::ptrdiff_t m_nTickBase = 0x5F8; // uint32
-                constexpr std::ptrdiff_t m_hPawn = 0x5FC; // 
+                constexpr std::ptrdiff_t m_hPawn = 0x5FC; // CHandle<C_BasePlayerPawn>
                 constexpr std::ptrdiff_t m_bKnownTeamMismatch = 0x600; // bool
-                constexpr std::ptrdiff_t m_hPredictedPawn = 0x604; // 
+                constexpr std::ptrdiff_t m_hPredictedPawn = 0x604; // CHandle<C_BasePlayerPawn>
                 constexpr std::ptrdiff_t m_nSplitScreenSlot = 0x608; // CSplitScreenSlot
-                constexpr std::ptrdiff_t m_hSplitOwner = 0x60C; // CHandle<CBasePlayerController>
+                constexpr std::ptrdiff_t m_hSplitOwner = 0x60C; // 
                 constexpr std::ptrdiff_t m_hSplitScreenPlayers = 0x610; // CUtlVector<CHandle<CBasePlayerController>>
                 constexpr std::ptrdiff_t m_bIsHLTV = 0x628; // bool
                 constexpr std::ptrdiff_t m_iConnected = 0x62C; // PlayerConnectedState
@@ -2683,7 +2683,7 @@ namespace cs2_dumper {
                 constexpr std::ptrdiff_t m_flOldSimulationTime = 0x1280; // float32
                 constexpr std::ptrdiff_t m_nLastExecutedCommandNumber = 0x1284; // int32
                 constexpr std::ptrdiff_t m_nLastExecutedCommandTick = 0x1288; // int32
-                constexpr std::ptrdiff_t m_hController = 0x128C; // CHandle<CBasePlayerController>
+                constexpr std::ptrdiff_t m_hController = 0x128C; // 
                 constexpr std::ptrdiff_t m_bIsSwappingToPredictableController = 0x1290; // bool
             }
             // Parent: None
@@ -5789,7 +5789,7 @@ namespace cs2_dumper {
                 constexpr std::ptrdiff_t m_explosionCustomEffect = 0x1010; // CUtlSymbolLarge
                 constexpr std::ptrdiff_t m_explosionCustomSound = 0x1018; // CUtlSymbolLarge
                 constexpr std::ptrdiff_t m_explosionModifier = 0x1020; // CUtlSymbolLarge
-                constexpr std::ptrdiff_t m_hPhysicsAttacker = 0x1028; // 
+                constexpr std::ptrdiff_t m_hPhysicsAttacker = 0x1028; // CHandle<C_BasePlayerPawn>
                 constexpr std::ptrdiff_t m_flLastPhysicsInfluenceTime = 0x102C; // GameTime_t
                 constexpr std::ptrdiff_t m_flDefaultFadeScale = 0x1030; // float32
                 constexpr std::ptrdiff_t m_hLastAttacker = 0x1034; // CHandle<C_BaseEntity>
