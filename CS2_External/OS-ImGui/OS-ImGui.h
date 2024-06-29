@@ -15,7 +15,7 @@ namespace OSImGui
 #ifdef _CONSOLE
 	class OSImGui : public OSImGui_External, public Singleton<OSImGui>
 #else
-	class OSImGui : public OSImGui_Internal, public Singleton<OSImGui>
+	class OSImGui : public OSImGui_External, public Singleton<OSImGui>
 #endif
 	{
 	public:

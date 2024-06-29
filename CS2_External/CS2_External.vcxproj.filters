@@ -124,6 +124,7 @@
     <ClInclude Include="OS-ImGui\imgui\imstb_textedit.h" />
     <ClInclude Include="OS-ImGui\imgui\imstb_truetype.h" />
     <ClInclude Include="OS-ImGui\imgui\font.h" />
+    <ClInclude Include="json.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="OS-ImGui\OS-ImGui.cpp">

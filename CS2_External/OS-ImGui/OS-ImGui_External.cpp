@@ -8,7 +8,7 @@
 * @version		: 1.0
 * @date			: 2023/6/18	11:21
 ****************************************************/
-
+#define _CONSOLE
 // D3D11 Device
 namespace OSImGui
 {
