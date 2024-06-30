@@ -10,6 +10,11 @@ CS2 external cheat.
 ## NOTICE
 - Offsets Updated
 - Custom Menu
+- Implemented Online Automatic Offset Update
+
+## Requirements
+- Build: Release X64
+- CPR LIB X64 Static
 
 <img src="https://raw.githubusercontent.com/E0x00000/CS2_External/master/imagem_2024-06-14_140642544.png" width="1200" />
 
