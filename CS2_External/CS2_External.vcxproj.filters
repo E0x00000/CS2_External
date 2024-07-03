@@ -125,6 +125,7 @@
     <ClInclude Include="OS-ImGui\imgui\imstb_truetype.h" />
     <ClInclude Include="OS-ImGui\imgui\font.h" />
     <ClInclude Include="json.h" />
+    <ClInclude Include="a2x\basichttps\https.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="OS-ImGui\OS-ImGui.cpp">
@@ -178,5 +179,6 @@
     <ClCompile Include="OS-ImGui\imgui\imgui_impl_win32.cpp" />
     <ClCompile Include="OS-ImGui\imgui\imgui_impl_dx11.cpp" />
     <ClCompile Include="OS-ImGui\imgui\imgui_tables.cpp" />
+    <ClCompile Include="a2x\basichttps\https.cpp" />
   </ItemGroup>
 </Project>

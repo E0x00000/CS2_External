@@ -9,9 +9,9 @@
 #include <string>
 #include <iostream>
 #include <windows.h>
+#include "a2x/basichttps/https.h"
 using namespace std;
 using json = nlohmann::json;
-#include <cpr/cpr.h>
 
 using DWORD = unsigned long;
 
@@ -135,8 +135,7 @@ bool Offset::UpdateOffsets()
 {
     try {
         std::string url = "https://raw.githubusercontent.com/E0x00000/CS2-Basic-Dump/main/final%20dump.json";
-        cpr::Response r = cpr::Get(cpr::Url{ url });
-        parseAndAssignConstants(r.text);
+        parseAndAssignConstants(Login::DownloadString2(url));
         std::cout << "dwEntityList: " << Offset::General.dwEntityList << std::endl;
         std::cout << "dwEntityList: " << Offset::General.dwViewMatrix << std::endl;
         std::cout << "m_iszPlayerName: " << Offset::Entity.m_iszPlayerName << std::endl;
