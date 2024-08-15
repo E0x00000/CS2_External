@@ -11,6 +11,7 @@ CS2 external cheat.
 - Offsets Updated
 - Custom Menu
 - Implemented Online Automatic Offset Update
+- Offsets from 15/08/2024
 
 ## Requirements
 - Build: Release X64
