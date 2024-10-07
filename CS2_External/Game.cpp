@@ -4,12 +4,12 @@ bool CGame::InitAddress()
 {
 	this->Address.ClientDLL = reinterpret_cast<DWORD64>(ProcessMgr.GetProcessModuleHandle("client.dll"));
 	
-	this->Address.EntityList = GetClientDLLAddress() + Offset::General.dwEntityList;
-	this->Address.Matrix = GetClientDLLAddress() + Offset::General.dwViewMatrix;
-	this->Address.ViewAngle = GetClientDLLAddress() + Offset::General.dwViewAngles;
-	this->Address.LocalController = GetClientDLLAddress() + Offset::General.dwLocalPlayerController;
-	this->Address.LocalPawn = GetClientDLLAddress() + Offset::General.LocalPlayerPawn;
-	this->Address.GlobalVars = GetClientDLLAddress() + Offset::General.dwGlobalVars;
+	this->Address.EntityList = GetClientDLLAddress() + Offset::client_dll.dwEntityList;
+	this->Address.Matrix = GetClientDLLAddress() + Offset::client_dll.dwViewMatrix;
+	this->Address.ViewAngle = GetClientDLLAddress() + Offset::client_dll.dwViewAngles;
+	this->Address.LocalController = GetClientDLLAddress() + Offset::client_dll.dwLocalPlayerController;
+	this->Address.LocalPawn = GetClientDLLAddress() + Offset::client_dll.dwLocalPlayerPawn;
+	this->Address.GlobalVars = GetClientDLLAddress() + Offset::client_dll.dwGlobalVars;
 
 	return this->Address.ClientDLL != 0;
 }

@@ -43,11 +43,11 @@ int main()
 	std::cout << Format("[Game] Client:%llX\n", gGame.GetClientDLLAddress());
 
 	std::cout << "Offset:" << std::endl;
-	std::cout << Format("--EntityList:%llX\n", Offset::General.dwEntityList);
-	std::cout << Format("--Matrix:%llX\n", Offset::General.dwViewAngles);
-	std::cout << Format("--LocalPlayerController:%llX\n", Offset::General.dwLocalPlayerController);
-	std::cout << Format("--ViewAngles:%llX\n", Offset::General.dwViewAngles);
-	std::cout << Format("--LocalPlayerPawn:%llX\n", Offset::General.LocalPlayerPawn);
+	std::cout << Format("--EntityList:%llX\n", Offset::client_dll.dwEntityList);
+	std::cout << Format("--Matrix:%llX\n", Offset::client_dll.dwViewAngles);
+	std::cout << Format("--LocalPlayerController:%llX\n", Offset::client_dll.dwLocalPlayerController);
+	std::cout << Format("--ViewAngles:%llX\n", Offset::client_dll.dwViewAngles);
+	std::cout << Format("--LocalPlayerPawn:%llX\n", Offset::client_dll.dwLocalPlayerPawn);
 
 
 	if (fs::exists(MenuConfig::path))
