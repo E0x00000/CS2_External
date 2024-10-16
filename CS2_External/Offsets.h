@@ -192,6 +192,7 @@ namespace Offset
 	inline struct C_BaseModelEntityOffsets {
 		DWORD m_CRenderComponent;
 		DWORD m_CHitboxComponent;
+		DWORD m_LastHitGroup;
 		DWORD m_bInitModelEffects;
 		DWORD m_bIsStaticProp;
 		DWORD m_nLastAddDecal;
@@ -556,6 +557,7 @@ namespace Offset
 		DWORD m_pBuyServices;
 		DWORD m_pGlowServices;
 		DWORD m_pActionTrackingServices;
+		DWORD m_pDamageReactServices;
 		DWORD m_flHealthShotBoostExpirationTime;
 		DWORD m_flLastFiredWeaponTime;
 		DWORD m_bHasFemaleVoice;
@@ -917,6 +919,10 @@ namespace Offset
 		DWORD m_iUtilityDamage;
 		DWORD m_iEnemiesFlashed;
 	} CSPerRoundStats_t;
+
+	inline struct CRagdollManagerOffsets {
+		DWORD m_iCurrentMaxRagdollCount;
+	} CRagdollManager;
 
 	inline struct C_TeamRoundTimerOffsets {
 		DWORD m_bTimerPaused;
@@ -2688,10 +2694,6 @@ namespace Offset
 		DWORD m_PhonemeClasses;
 	} C_BaseFlex;
 
-	inline struct C_RagdollManagerOffsets {
-		DWORD m_iCurrentMaxRagdollCount;
-	} C_RagdollManager;
-
 	inline struct C_EnvSkyOffsets {
 		DWORD m_hSkyMaterial;
 		DWORD m_hSkyMaterialLightingOnly;
@@ -3618,6 +3620,5 @@ namespace Offset
 		DWORD dwSoundSystem;
 		DWORD dwSoundSystem_engineViewData;
 	} soundsystem_dll;
-
 	bool UpdateOffsets();
 }

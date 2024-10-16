@@ -13,6 +13,7 @@
 using namespace std;
 using json = nlohmann::json;
 
+using DWORD = unsigned long;
 
 
 DWORD findOffsetByName(const nlohmann::json& j, const std::string& category, const std::string& name) {
@@ -30,11 +31,14 @@ DWORD findOffsetByName(const nlohmann::json& j, const std::string& category, con
     throw std::runtime_error("Offset " + name + " não encontrado na categoria " + category);
 }
 using namespace Offset;
-    
-void parseAndAssignConstants(const std::string& jsonString) {
-    // Atribuições para buttons
-    // buttons Offsets
+
+
+void parseAndAssignConstants(const std::string& jsonString)
+{
+
     json j = json::parse(jsonString);
+    // Atribuições para buttons
+// buttons Offsets
     buttons.attack = findOffsetByName(j, "buttons", "attack");
     buttons.attack2 = findOffsetByName(j, "buttons", "attack2");
     buttons.back = findOffsetByName(j, "buttons", "back");
@@ -222,6 +226,7 @@ void parseAndAssignConstants(const std::string& jsonString) {
     // C_BaseModelEntity Offsets
     C_BaseModelEntity.m_CRenderComponent = findOffsetByName(j, "C_BaseModelEntity", "m_CRenderComponent");
     C_BaseModelEntity.m_CHitboxComponent = findOffsetByName(j, "C_BaseModelEntity", "m_CHitboxComponent");
+    C_BaseModelEntity.m_LastHitGroup = findOffsetByName(j, "C_BaseModelEntity", "m_LastHitGroup");
     C_BaseModelEntity.m_bInitModelEffects = findOffsetByName(j, "C_BaseModelEntity", "m_bInitModelEffects");
     C_BaseModelEntity.m_bIsStaticProp = findOffsetByName(j, "C_BaseModelEntity", "m_bIsStaticProp");
     C_BaseModelEntity.m_nLastAddDecal = findOffsetByName(j, "C_BaseModelEntity", "m_nLastAddDecal");
@@ -586,6 +591,7 @@ void parseAndAssignConstants(const std::string& jsonString) {
     C_CSPlayerPawn.m_pBuyServices = findOffsetByName(j, "C_CSPlayerPawn", "m_pBuyServices");
     C_CSPlayerPawn.m_pGlowServices = findOffsetByName(j, "C_CSPlayerPawn", "m_pGlowServices");
     C_CSPlayerPawn.m_pActionTrackingServices = findOffsetByName(j, "C_CSPlayerPawn", "m_pActionTrackingServices");
+    C_CSPlayerPawn.m_pDamageReactServices = findOffsetByName(j, "C_CSPlayerPawn", "m_pDamageReactServices");
     C_CSPlayerPawn.m_flHealthShotBoostExpirationTime = findOffsetByName(j, "C_CSPlayerPawn", "m_flHealthShotBoostExpirationTime");
     C_CSPlayerPawn.m_flLastFiredWeaponTime = findOffsetByName(j, "C_CSPlayerPawn", "m_flLastFiredWeaponTime");
     C_CSPlayerPawn.m_bHasFemaleVoice = findOffsetByName(j, "C_CSPlayerPawn", "m_bHasFemaleVoice");
@@ -946,6 +952,10 @@ void parseAndAssignConstants(const std::string& jsonString) {
     CSPerRoundStats_t.m_iCashEarned = findOffsetByName(j, "CSPerRoundStats_t", "m_iCashEarned");
     CSPerRoundStats_t.m_iUtilityDamage = findOffsetByName(j, "CSPerRoundStats_t", "m_iUtilityDamage");
     CSPerRoundStats_t.m_iEnemiesFlashed = findOffsetByName(j, "CSPerRoundStats_t", "m_iEnemiesFlashed");
+
+    // Atribuições para CRagdollManager
+    // CRagdollManager Offsets
+    CRagdollManager.m_iCurrentMaxRagdollCount = findOffsetByName(j, "CRagdollManager", "m_iCurrentMaxRagdollCount");
 
     // Atribuições para C_TeamRoundTimer
     // C_TeamRoundTimer Offsets
@@ -2717,10 +2727,6 @@ void parseAndAssignConstants(const std::string& jsonString) {
     C_BaseFlex.m_vEyeOcclusionRendererHalfExtent = findOffsetByName(j, "C_BaseFlex", "m_vEyeOcclusionRendererHalfExtent");
     C_BaseFlex.m_PhonemeClasses = findOffsetByName(j, "C_BaseFlex", "m_PhonemeClasses");
 
-    // Atribuições para C_RagdollManager
-    // C_RagdollManager Offsets
-    C_RagdollManager.m_iCurrentMaxRagdollCount = findOffsetByName(j, "C_RagdollManager", "m_iCurrentMaxRagdollCount");
-
     // Atribuições para C_EnvSky
     // C_EnvSky Offsets
     C_EnvSky.m_hSkyMaterial = findOffsetByName(j, "C_EnvSky", "m_hSkyMaterial");
@@ -3653,24 +3659,15 @@ void parseAndAssignConstants(const std::string& jsonString) {
 
 bool Offset::UpdateOffsets()
 {
-    try {
-        std::string url = "https://raw.githubusercontent.com/E0x00000/CS2-Basic-Dump-V2/refs/heads/main/offsets.json";
-        parseAndAssignConstants(Login::DownloadString2(url));
-        std::cout << "dwEntityList: " << Offset::client_dll.dwEntityList << std::endl;
-        std::cout << "dwEntityList: " << Offset::client_dll.dwViewMatrix << std::endl;
-        std::cout << "m_iszPlayerName: " << Offset::CBasePlayerController.m_iszPlayerName << std::endl;
-        std::cout << "m_modelState: " << Offset::CSkeletonInstance.m_modelState << std::endl;
-        std::cout << "m_hPawn: " << Offset::CBasePlayerController.m_hPawn << std::endl;
-        std::cout << "m_AttributeManager: " << Offset::C_EconEntity.m_AttributeManager << std::endl;
-        std::cout << "m_Item: " << Offset::C_AttributeContainer.m_Item << std::endl;
-        std::cout << "m_nBombSite: " << Offset::C_PlantedC4.m_nBombSite << std::endl;
-        std::cout << "m_iAccount: " << Offset::CCSPlayerController_InGameMoneyServices.m_iAccount << std::endl;
-        std::cout << "m_nSmokeEffectTickBegin: " << Offset::C_SmokeGrenadeProjectile.m_nSmokeEffectTickBegin << std::endl;
-
+    try 
+    {
+        std::string url = ("https://raw.githubusercontent.com/E0x00000/CS2-Basic-Dump-V2/refs/heads/main/offsets.json");
+        std::string final = Login::DownloadString2(url);
+        parseAndAssignConstants(final);
     }
-    catch (const std::exception& e) {
-        std::cerr << "Erro: " << e.what() << std::endl;
+    catch (const std::exception& e)
+    {
         return false;
     }
-	return true;
+    return true;
 }
