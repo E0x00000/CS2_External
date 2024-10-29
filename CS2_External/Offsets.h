@@ -24,7 +24,6 @@ namespace Offset
 	} buttons;
 
 	inline struct CCSPlayer_MovementServicesOffsets {
-		DWORD m_flMaxFallVelocity;
 		DWORD m_vecLadderNormal;
 		DWORD m_nLadderSurfacePropIndex;
 		DWORD m_flDuckAmount;
@@ -53,8 +52,6 @@ namespace Offset
 		DWORD m_nGameCodeHasMovedPlayerAfterCommand;
 		DWORD m_bOldJumpPressed;
 		DWORD m_flJumpPressedTime;
-		DWORD m_flJumpUntil;
-		DWORD m_flJumpVel;
 		DWORD m_fStashGrenadeParameterWhen;
 		DWORD m_nButtonDownMaskPrev;
 		DWORD m_flOffsetTickCompleteTime;
@@ -63,6 +60,8 @@ namespace Offset
 		DWORD m_flHeightAtJumpStart;
 		DWORD m_flMaxJumpHeightThisJump;
 		DWORD m_flMaxJumpHeightLastJump;
+		DWORD m_flStaminaAtJumpStart;
+		DWORD m_flAccumulatedJumpError;
 	} CCSPlayer_MovementServices;
 
 	inline struct sky3dparams_tOffsets {
@@ -475,6 +474,8 @@ namespace Offset
 		DWORD m_vSmokeColor;
 		DWORD m_vSmokeDetonationPos;
 		DWORD m_VoxelFrameData;
+		DWORD m_nVoxelFrameDataSize;
+		DWORD m_nVoxelUpdate;
 		DWORD m_bSmokeVolumeDataReceived;
 		DWORD m_bSmokeEffectSpawned;
 	} C_SmokeGrenadeProjectile;
@@ -2519,6 +2520,10 @@ namespace Offset
 		DWORD m_vecPreviousTestPoint;
 	} C_PointValueRemapper;
 
+	inline struct C_KnifeOffsets {
+		DWORD m_bFirstAttack;
+	} C_Knife;
+
 	inline struct C_ItemDogtagsOffsets {
 		DWORD m_OwningPlayer;
 		DWORD m_KillingPlayer;
@@ -2887,6 +2892,7 @@ namespace Offset
 		DWORD m_bOldFirstPersonSpectatedState;
 		DWORD m_bUIWeapon;
 		DWORD m_nCustomEconReloadEventId;
+		DWORD m_nextPrevOwnerUseTime;
 		DWORD m_hPrevOwner;
 		DWORD m_nDropTick;
 		DWORD m_donated;
@@ -3280,7 +3286,9 @@ namespace Offset
 		DWORD m_iPawnBotDifficulty;
 		DWORD m_hOriginalControllerOfCurrentPawn;
 		DWORD m_iScore;
-		DWORD m_vecKills;
+		DWORD m_recentKillQueue;
+		DWORD m_nFirstKill;
+		DWORD m_nKillCount;
 		DWORD m_bMvpNoMusic;
 		DWORD m_eMvpReason;
 		DWORD m_iMusicKitID;
@@ -3620,5 +3628,16 @@ namespace Offset
 		DWORD dwSoundSystem;
 		DWORD dwSoundSystem_engineViewData;
 	} soundsystem_dll;
+
+	inline struct TrashOffsets {
+		DWORD AnimGraph;
+		DWORD Aspect_Ratio;
+		DWORD Fov_Changer;
+		DWORD Fov_Offset;
+		DWORD LightSceneObject;
+		DWORD ScenSystem;
+		DWORD hkDrawSceneObject;
+	} Trash;
+
 	bool UpdateOffsets();
 }

@@ -33,9 +33,9 @@ DWORD findOffsetByName(const nlohmann::json& j, const std::string& category, con
 using namespace Offset;
 
 
+
 void parseAndAssignConstants(const std::string& jsonString)
 {
-
     json j = json::parse(jsonString);
     // Atribuições para buttons
 // buttons Offsets
@@ -58,7 +58,6 @@ void parseAndAssignConstants(const std::string& jsonString)
 
     // Atribuições para CCSPlayer_MovementServices
     // CCSPlayer_MovementServices Offsets
-    CCSPlayer_MovementServices.m_flMaxFallVelocity = findOffsetByName(j, "CCSPlayer_MovementServices", "m_flMaxFallVelocity");
     CCSPlayer_MovementServices.m_vecLadderNormal = findOffsetByName(j, "CCSPlayer_MovementServices", "m_vecLadderNormal");
     CCSPlayer_MovementServices.m_nLadderSurfacePropIndex = findOffsetByName(j, "CCSPlayer_MovementServices", "m_nLadderSurfacePropIndex");
     CCSPlayer_MovementServices.m_flDuckAmount = findOffsetByName(j, "CCSPlayer_MovementServices", "m_flDuckAmount");
@@ -87,8 +86,6 @@ void parseAndAssignConstants(const std::string& jsonString)
     CCSPlayer_MovementServices.m_nGameCodeHasMovedPlayerAfterCommand = findOffsetByName(j, "CCSPlayer_MovementServices", "m_nGameCodeHasMovedPlayerAfterCommand");
     CCSPlayer_MovementServices.m_bOldJumpPressed = findOffsetByName(j, "CCSPlayer_MovementServices", "m_bOldJumpPressed");
     CCSPlayer_MovementServices.m_flJumpPressedTime = findOffsetByName(j, "CCSPlayer_MovementServices", "m_flJumpPressedTime");
-    CCSPlayer_MovementServices.m_flJumpUntil = findOffsetByName(j, "CCSPlayer_MovementServices", "m_flJumpUntil");
-    CCSPlayer_MovementServices.m_flJumpVel = findOffsetByName(j, "CCSPlayer_MovementServices", "m_flJumpVel");
     CCSPlayer_MovementServices.m_fStashGrenadeParameterWhen = findOffsetByName(j, "CCSPlayer_MovementServices", "m_fStashGrenadeParameterWhen");
     CCSPlayer_MovementServices.m_nButtonDownMaskPrev = findOffsetByName(j, "CCSPlayer_MovementServices", "m_nButtonDownMaskPrev");
     CCSPlayer_MovementServices.m_flOffsetTickCompleteTime = findOffsetByName(j, "CCSPlayer_MovementServices", "m_flOffsetTickCompleteTime");
@@ -97,6 +94,8 @@ void parseAndAssignConstants(const std::string& jsonString)
     CCSPlayer_MovementServices.m_flHeightAtJumpStart = findOffsetByName(j, "CCSPlayer_MovementServices", "m_flHeightAtJumpStart");
     CCSPlayer_MovementServices.m_flMaxJumpHeightThisJump = findOffsetByName(j, "CCSPlayer_MovementServices", "m_flMaxJumpHeightThisJump");
     CCSPlayer_MovementServices.m_flMaxJumpHeightLastJump = findOffsetByName(j, "CCSPlayer_MovementServices", "m_flMaxJumpHeightLastJump");
+    CCSPlayer_MovementServices.m_flStaminaAtJumpStart = findOffsetByName(j, "CCSPlayer_MovementServices", "m_flStaminaAtJumpStart");
+    CCSPlayer_MovementServices.m_flAccumulatedJumpError = findOffsetByName(j, "CCSPlayer_MovementServices", "m_flAccumulatedJumpError");
 
     // Atribuições para sky3dparams_t
     // sky3dparams_t Offsets
@@ -509,6 +508,8 @@ void parseAndAssignConstants(const std::string& jsonString)
     C_SmokeGrenadeProjectile.m_vSmokeColor = findOffsetByName(j, "C_SmokeGrenadeProjectile", "m_vSmokeColor");
     C_SmokeGrenadeProjectile.m_vSmokeDetonationPos = findOffsetByName(j, "C_SmokeGrenadeProjectile", "m_vSmokeDetonationPos");
     C_SmokeGrenadeProjectile.m_VoxelFrameData = findOffsetByName(j, "C_SmokeGrenadeProjectile", "m_VoxelFrameData");
+    C_SmokeGrenadeProjectile.m_nVoxelFrameDataSize = findOffsetByName(j, "C_SmokeGrenadeProjectile", "m_nVoxelFrameDataSize");
+    C_SmokeGrenadeProjectile.m_nVoxelUpdate = findOffsetByName(j, "C_SmokeGrenadeProjectile", "m_nVoxelUpdate");
     C_SmokeGrenadeProjectile.m_bSmokeVolumeDataReceived = findOffsetByName(j, "C_SmokeGrenadeProjectile", "m_bSmokeVolumeDataReceived");
     C_SmokeGrenadeProjectile.m_bSmokeEffectSpawned = findOffsetByName(j, "C_SmokeGrenadeProjectile", "m_bSmokeEffectSpawned");
 
@@ -2552,6 +2553,10 @@ void parseAndAssignConstants(const std::string& jsonString)
     C_PointValueRemapper.m_flPreviousUpdateTickTime = findOffsetByName(j, "C_PointValueRemapper", "m_flPreviousUpdateTickTime");
     C_PointValueRemapper.m_vecPreviousTestPoint = findOffsetByName(j, "C_PointValueRemapper", "m_vecPreviousTestPoint");
 
+    // Atribuições para C_Knife
+    // C_Knife Offsets
+    C_Knife.m_bFirstAttack = findOffsetByName(j, "C_Knife", "m_bFirstAttack");
+
     // Atribuições para C_ItemDogtags
     // C_ItemDogtags Offsets
     C_ItemDogtags.m_OwningPlayer = findOffsetByName(j, "C_ItemDogtags", "m_OwningPlayer");
@@ -2921,6 +2926,7 @@ void parseAndAssignConstants(const std::string& jsonString)
     C_CSWeaponBase.m_bOldFirstPersonSpectatedState = findOffsetByName(j, "C_CSWeaponBase", "m_bOldFirstPersonSpectatedState");
     C_CSWeaponBase.m_bUIWeapon = findOffsetByName(j, "C_CSWeaponBase", "m_bUIWeapon");
     C_CSWeaponBase.m_nCustomEconReloadEventId = findOffsetByName(j, "C_CSWeaponBase", "m_nCustomEconReloadEventId");
+    C_CSWeaponBase.m_nextPrevOwnerUseTime = findOffsetByName(j, "C_CSWeaponBase", "m_nextPrevOwnerUseTime");
     C_CSWeaponBase.m_hPrevOwner = findOffsetByName(j, "C_CSWeaponBase", "m_hPrevOwner");
     C_CSWeaponBase.m_nDropTick = findOffsetByName(j, "C_CSWeaponBase", "m_nDropTick");
     C_CSWeaponBase.m_donated = findOffsetByName(j, "C_CSWeaponBase", "m_donated");
@@ -3314,7 +3320,9 @@ void parseAndAssignConstants(const std::string& jsonString)
     CCSPlayerController.m_iPawnBotDifficulty = findOffsetByName(j, "CCSPlayerController", "m_iPawnBotDifficulty");
     CCSPlayerController.m_hOriginalControllerOfCurrentPawn = findOffsetByName(j, "CCSPlayerController", "m_hOriginalControllerOfCurrentPawn");
     CCSPlayerController.m_iScore = findOffsetByName(j, "CCSPlayerController", "m_iScore");
-    CCSPlayerController.m_vecKills = findOffsetByName(j, "CCSPlayerController", "m_vecKills");
+    CCSPlayerController.m_recentKillQueue = findOffsetByName(j, "CCSPlayerController", "m_recentKillQueue");
+    CCSPlayerController.m_nFirstKill = findOffsetByName(j, "CCSPlayerController", "m_nFirstKill");
+    CCSPlayerController.m_nKillCount = findOffsetByName(j, "CCSPlayerController", "m_nKillCount");
     CCSPlayerController.m_bMvpNoMusic = findOffsetByName(j, "CCSPlayerController", "m_bMvpNoMusic");
     CCSPlayerController.m_eMvpReason = findOffsetByName(j, "CCSPlayerController", "m_eMvpReason");
     CCSPlayerController.m_iMusicKitID = findOffsetByName(j, "CCSPlayerController", "m_iMusicKitID");
@@ -3654,8 +3662,17 @@ void parseAndAssignConstants(const std::string& jsonString)
     soundsystem_dll.dwSoundSystem = findOffsetByName(j, "soundsystem_dll", "dwSoundSystem");
     soundsystem_dll.dwSoundSystem_engineViewData = findOffsetByName(j, "soundsystem_dll", "dwSoundSystem_engineViewData");
 
-}
+    // Atribuições para Trash
+    // Trash Offsets
+    Trash.AnimGraph = findOffsetByName(j, "Trash", "AnimGraph");
+    Trash.Aspect_Ratio = findOffsetByName(j, "Trash", "Aspect_Ratio");
+    Trash.Fov_Changer = findOffsetByName(j, "Trash", "Fov_Changer");
+    Trash.Fov_Offset = findOffsetByName(j, "Trash", "Fov_Offset");
+    Trash.LightSceneObject = findOffsetByName(j, "Trash", "LightSceneObject");
+    Trash.ScenSystem = findOffsetByName(j, "Trash", "ScenSystem");
+    Trash.hkDrawSceneObject = findOffsetByName(j, "Trash", "hkDrawSceneObject");
 
+}
 
 bool Offset::UpdateOffsets()
 {
