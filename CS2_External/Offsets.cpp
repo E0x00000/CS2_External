@@ -3661,17 +3661,6 @@ void parseAndAssignConstants(const std::string& jsonString)
     // soundsystem_dll Offsets
     soundsystem_dll.dwSoundSystem = findOffsetByName(j, "soundsystem_dll", "dwSoundSystem");
     soundsystem_dll.dwSoundSystem_engineViewData = findOffsetByName(j, "soundsystem_dll", "dwSoundSystem_engineViewData");
-
-    // Atribuições para Trash
-    // Trash Offsets
-    Trash.AnimGraph = findOffsetByName(j, "Trash", "AnimGraph");
-    Trash.Aspect_Ratio = findOffsetByName(j, "Trash", "Aspect_Ratio");
-    Trash.Fov_Changer = findOffsetByName(j, "Trash", "Fov_Changer");
-    Trash.Fov_Offset = findOffsetByName(j, "Trash", "Fov_Offset");
-    Trash.LightSceneObject = findOffsetByName(j, "Trash", "LightSceneObject");
-    Trash.ScenSystem = findOffsetByName(j, "Trash", "ScenSystem");
-    Trash.hkDrawSceneObject = findOffsetByName(j, "Trash", "hkDrawSceneObject");
-
 }
 
 bool Offset::UpdateOffsets()
