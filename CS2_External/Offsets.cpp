@@ -36,6 +36,7 @@ using namespace Offset;
 
 void parseAndAssignConstants(const std::string& jsonString)
 {
+
     json j = json::parse(jsonString);
     // Atribuições para buttons
 // buttons Offsets
@@ -179,11 +180,10 @@ void parseAndAssignConstants(const std::string& jsonString)
     C_CSGameRules.m_iMatchStats_PlayersAlive_T = findOffsetByName(j, "C_CSGameRules", "m_iMatchStats_PlayersAlive_T");
     C_CSGameRules.m_TeamRespawnWaveTimes = findOffsetByName(j, "C_CSGameRules", "m_TeamRespawnWaveTimes");
     C_CSGameRules.m_flNextRespawnWave = findOffsetByName(j, "C_CSGameRules", "m_flNextRespawnWave");
-    C_CSGameRules.m_nServerQuestID = findOffsetByName(j, "C_CSGameRules", "m_nServerQuestID");
     C_CSGameRules.m_vMinimapMins = findOffsetByName(j, "C_CSGameRules", "m_vMinimapMins");
     C_CSGameRules.m_vMinimapMaxs = findOffsetByName(j, "C_CSGameRules", "m_vMinimapMaxs");
     C_CSGameRules.m_MinimapVerticalSectionHeights = findOffsetByName(j, "C_CSGameRules", "m_MinimapVerticalSectionHeights");
-    C_CSGameRules.m_bSpawnedTerrorHuntHeavy = findOffsetByName(j, "C_CSGameRules", "m_bSpawnedTerrorHuntHeavy");
+    C_CSGameRules.m_ullLocalMatchID = findOffsetByName(j, "C_CSGameRules", "m_ullLocalMatchID");
     C_CSGameRules.m_nEndMatchMapGroupVoteTypes = findOffsetByName(j, "C_CSGameRules", "m_nEndMatchMapGroupVoteTypes");
     C_CSGameRules.m_nEndMatchMapGroupVoteOptions = findOffsetByName(j, "C_CSGameRules", "m_nEndMatchMapGroupVoteOptions");
     C_CSGameRules.m_nEndMatchMapVoteWinner = findOffsetByName(j, "C_CSGameRules", "m_nEndMatchMapVoteWinner");
@@ -1633,7 +1633,6 @@ void parseAndAssignConstants(const std::string& jsonString)
     // CCSPlayer_ItemServices Offsets
     CCSPlayer_ItemServices.m_bHasDefuser = findOffsetByName(j, "CCSPlayer_ItemServices", "m_bHasDefuser");
     CCSPlayer_ItemServices.m_bHasHelmet = findOffsetByName(j, "CCSPlayer_ItemServices", "m_bHasHelmet");
-    CCSPlayer_ItemServices.m_bHasHeavyArmor = findOffsetByName(j, "CCSPlayer_ItemServices", "m_bHasHeavyArmor");
 
     // Atribuições para C_BarnLight
     // C_BarnLight Offsets
@@ -1920,6 +1919,10 @@ void parseAndAssignConstants(const std::string& jsonString)
     CRenderComponent.m_bEnableRendering = findOffsetByName(j, "CRenderComponent", "m_bEnableRendering");
     CRenderComponent.m_bInterpolationReadyToDraw = findOffsetByName(j, "CRenderComponent", "m_bInterpolationReadyToDraw");
 
+    // Atribuições para CEnvSoundscapeProxy
+    // CEnvSoundscapeProxy Offsets
+    CEnvSoundscapeProxy.m_MainSoundscapeName = findOffsetByName(j, "CEnvSoundscapeProxy", "m_MainSoundscapeName");
+
     // Atribuições para C_SoundEventOBBEntity
     // C_SoundEventOBBEntity Offsets
     C_SoundEventOBBEntity.m_vMins = findOffsetByName(j, "C_SoundEventOBBEntity", "m_vMins");
@@ -2018,8 +2021,8 @@ void parseAndAssignConstants(const std::string& jsonString)
     C_EconItemView.m_iRarityOverride = findOffsetByName(j, "C_EconItemView", "m_iRarityOverride");
     C_EconItemView.m_iQualityOverride = findOffsetByName(j, "C_EconItemView", "m_iQualityOverride");
     C_EconItemView.m_iOriginOverride = findOffsetByName(j, "C_EconItemView", "m_iOriginOverride");
+    C_EconItemView.m_ubStyleOverride = findOffsetByName(j, "C_EconItemView", "m_ubStyleOverride");
     C_EconItemView.m_unClientFlags = findOffsetByName(j, "C_EconItemView", "m_unClientFlags");
-    C_EconItemView.m_unOverrideStyle = findOffsetByName(j, "C_EconItemView", "m_unOverrideStyle");
     C_EconItemView.m_AttributeList = findOffsetByName(j, "C_EconItemView", "m_AttributeList");
     C_EconItemView.m_NetworkedDynamicAttributes = findOffsetByName(j, "C_EconItemView", "m_NetworkedDynamicAttributes");
     C_EconItemView.m_szCustomName = findOffsetByName(j, "C_EconItemView", "m_szCustomName");
@@ -2034,10 +2037,6 @@ void parseAndAssignConstants(const std::string& jsonString)
     // Atribuições para C_EnvWindClientside
     // C_EnvWindClientside Offsets
     C_EnvWindClientside.m_EnvWindShared = findOffsetByName(j, "C_EnvWindClientside", "m_EnvWindShared");
-
-    // Atribuições para C_WeaponShield
-    // C_WeaponShield Offsets
-    C_WeaponShield.m_flDisplayHealth = findOffsetByName(j, "C_WeaponShield", "m_flDisplayHealth");
 
     // Atribuições para C_PointClientUIWorldTextPanel
     // C_PointClientUIWorldTextPanel Offsets
@@ -2060,6 +2059,20 @@ void parseAndAssignConstants(const std::string& jsonString)
     CPlayer_MovementServices.m_flUpMove = findOffsetByName(j, "CPlayer_MovementServices", "m_flUpMove");
     CPlayer_MovementServices.m_vecLastMovementImpulses = findOffsetByName(j, "CPlayer_MovementServices", "m_vecLastMovementImpulses");
     CPlayer_MovementServices.m_vecOldViewAngles = findOffsetByName(j, "CPlayer_MovementServices", "m_vecOldViewAngles");
+
+    // Atribuições para CEnvSoundscape
+    // CEnvSoundscape Offsets
+    CEnvSoundscape.m_OnPlay = findOffsetByName(j, "CEnvSoundscape", "m_OnPlay");
+    CEnvSoundscape.m_flRadius = findOffsetByName(j, "CEnvSoundscape", "m_flRadius");
+    CEnvSoundscape.m_soundEventName = findOffsetByName(j, "CEnvSoundscape", "m_soundEventName");
+    CEnvSoundscape.m_bOverrideWithEvent = findOffsetByName(j, "CEnvSoundscape", "m_bOverrideWithEvent");
+    CEnvSoundscape.m_soundscapeIndex = findOffsetByName(j, "CEnvSoundscape", "m_soundscapeIndex");
+    CEnvSoundscape.m_soundscapeEntityListId = findOffsetByName(j, "CEnvSoundscape", "m_soundscapeEntityListId");
+    CEnvSoundscape.m_positionNames = findOffsetByName(j, "CEnvSoundscape", "m_positionNames");
+    CEnvSoundscape.m_hProxySoundscape = findOffsetByName(j, "CEnvSoundscape", "m_hProxySoundscape");
+    CEnvSoundscape.m_bDisabled = findOffsetByName(j, "CEnvSoundscape", "m_bDisabled");
+    CEnvSoundscape.m_soundscapeName = findOffsetByName(j, "CEnvSoundscape", "m_soundscapeName");
+    CEnvSoundscape.m_soundEventHash = findOffsetByName(j, "CEnvSoundscape", "m_soundEventHash");
 
     // Atribuições para CBasePlayerVData
     // CBasePlayerVData Offsets
@@ -2578,11 +2591,6 @@ void parseAndAssignConstants(const std::string& jsonString)
     // C_WeaponTaser Offsets
     C_WeaponTaser.m_fFireTime = findOffsetByName(j, "C_WeaponTaser", "m_fFireTime");
     C_WeaponTaser.m_nLastAttackTick = findOffsetByName(j, "C_WeaponTaser", "m_nLastAttackTick");
-
-    // Atribuições para C_Fists
-    // C_Fists Offsets
-    C_Fists.m_bPlayingUninterruptableAct = findOffsetByName(j, "C_Fists", "m_bPlayingUninterruptableAct");
-    C_Fists.m_nUninterruptableActivity = findOffsetByName(j, "C_Fists", "m_nUninterruptableActivity");
 
     // Atribuições para CInfoDynamicShadowHintBox
     // CInfoDynamicShadowHintBox Offsets
@@ -3253,11 +3261,16 @@ void parseAndAssignConstants(const std::string& jsonString)
     C_PointWorldText.m_bForceRecreateNextUpdate = findOffsetByName(j, "C_PointWorldText", "m_bForceRecreateNextUpdate");
     C_PointWorldText.m_messageText = findOffsetByName(j, "C_PointWorldText", "m_messageText");
     C_PointWorldText.m_FontName = findOffsetByName(j, "C_PointWorldText", "m_FontName");
+    C_PointWorldText.m_BackgroundMaterialName = findOffsetByName(j, "C_PointWorldText", "m_BackgroundMaterialName");
     C_PointWorldText.m_bEnabled = findOffsetByName(j, "C_PointWorldText", "m_bEnabled");
     C_PointWorldText.m_bFullbright = findOffsetByName(j, "C_PointWorldText", "m_bFullbright");
     C_PointWorldText.m_flWorldUnitsPerPx = findOffsetByName(j, "C_PointWorldText", "m_flWorldUnitsPerPx");
     C_PointWorldText.m_flFontSize = findOffsetByName(j, "C_PointWorldText", "m_flFontSize");
     C_PointWorldText.m_flDepthOffset = findOffsetByName(j, "C_PointWorldText", "m_flDepthOffset");
+    C_PointWorldText.m_bDrawBackground = findOffsetByName(j, "C_PointWorldText", "m_bDrawBackground");
+    C_PointWorldText.m_flBackgroundBorderWidth = findOffsetByName(j, "C_PointWorldText", "m_flBackgroundBorderWidth");
+    C_PointWorldText.m_flBackgroundBorderHeight = findOffsetByName(j, "C_PointWorldText", "m_flBackgroundBorderHeight");
+    C_PointWorldText.m_flBackgroundWorldToUV = findOffsetByName(j, "C_PointWorldText", "m_flBackgroundWorldToUV");
     C_PointWorldText.m_Color = findOffsetByName(j, "C_PointWorldText", "m_Color");
     C_PointWorldText.m_nJustifyHorizontal = findOffsetByName(j, "C_PointWorldText", "m_nJustifyHorizontal");
     C_PointWorldText.m_nJustifyVertical = findOffsetByName(j, "C_PointWorldText", "m_nJustifyVertical");
@@ -3271,6 +3284,7 @@ void parseAndAssignConstants(const std::string& jsonString)
     CCSPlayerController.m_pDamageServices = findOffsetByName(j, "CCSPlayerController", "m_pDamageServices");
     CCSPlayerController.m_iPing = findOffsetByName(j, "CCSPlayerController", "m_iPing");
     CCSPlayerController.m_bHasCommunicationAbuseMute = findOffsetByName(j, "CCSPlayerController", "m_bHasCommunicationAbuseMute");
+    CCSPlayerController.m_uiCommunicationMuteFlags = findOffsetByName(j, "CCSPlayerController", "m_uiCommunicationMuteFlags");
     CCSPlayerController.m_szCrosshairCodes = findOffsetByName(j, "CCSPlayerController", "m_szCrosshairCodes");
     CCSPlayerController.m_iPendingTeamNum = findOffsetByName(j, "CCSPlayerController", "m_iPendingTeamNum");
     CCSPlayerController.m_flForceTeamTime = findOffsetByName(j, "CCSPlayerController", "m_flForceTeamTime");
@@ -3290,11 +3304,13 @@ void parseAndAssignConstants(const std::string& jsonString)
     CCSPlayerController.m_iCompetitiveRankingPredicted_Tie = findOffsetByName(j, "CCSPlayerController", "m_iCompetitiveRankingPredicted_Tie");
     CCSPlayerController.m_nEndMatchNextMapVote = findOffsetByName(j, "CCSPlayerController", "m_nEndMatchNextMapVote");
     CCSPlayerController.m_unActiveQuestId = findOffsetByName(j, "CCSPlayerController", "m_unActiveQuestId");
+    CCSPlayerController.m_rtActiveMissionPeriod = findOffsetByName(j, "CCSPlayerController", "m_rtActiveMissionPeriod");
     CCSPlayerController.m_nQuestProgressReason = findOffsetByName(j, "CCSPlayerController", "m_nQuestProgressReason");
     CCSPlayerController.m_unPlayerTvControlFlags = findOffsetByName(j, "CCSPlayerController", "m_unPlayerTvControlFlags");
     CCSPlayerController.m_iDraftIndex = findOffsetByName(j, "CCSPlayerController", "m_iDraftIndex");
     CCSPlayerController.m_msQueuedModeDisconnectionTimestamp = findOffsetByName(j, "CCSPlayerController", "m_msQueuedModeDisconnectionTimestamp");
     CCSPlayerController.m_uiAbandonRecordedReason = findOffsetByName(j, "CCSPlayerController", "m_uiAbandonRecordedReason");
+    CCSPlayerController.m_eNetworkDisconnectionReason = findOffsetByName(j, "CCSPlayerController", "m_eNetworkDisconnectionReason");
     CCSPlayerController.m_bCannotBeKicked = findOffsetByName(j, "CCSPlayerController", "m_bCannotBeKicked");
     CCSPlayerController.m_bEverFullyConnected = findOffsetByName(j, "CCSPlayerController", "m_bEverFullyConnected");
     CCSPlayerController.m_bAbandonAllowsSurrender = findOffsetByName(j, "CCSPlayerController", "m_bAbandonAllowsSurrender");
@@ -3329,6 +3345,7 @@ void parseAndAssignConstants(const std::string& jsonString)
     CCSPlayerController.m_iMusicKitMVPs = findOffsetByName(j, "CCSPlayerController", "m_iMusicKitMVPs");
     CCSPlayerController.m_iMVPs = findOffsetByName(j, "CCSPlayerController", "m_iMVPs");
     CCSPlayerController.m_bIsPlayerNameDirty = findOffsetByName(j, "CCSPlayerController", "m_bIsPlayerNameDirty");
+    CCSPlayerController.m_bFireBulletsSeedSynchronized = findOffsetByName(j, "CCSPlayerController", "m_bFireBulletsSeedSynchronized");
 
     // Atribuições para C_BasePropDoor
     // C_BasePropDoor Offsets
@@ -3539,6 +3556,18 @@ void parseAndAssignConstants(const std::string& jsonString)
     C_Sprite.m_nSpriteWidth = findOffsetByName(j, "C_Sprite", "m_nSpriteWidth");
     C_Sprite.m_nSpriteHeight = findOffsetByName(j, "C_Sprite", "m_nSpriteHeight");
 
+    // Atribuições para CMapInfo
+    // CMapInfo Offsets
+    CMapInfo.m_iBuyingStatus = findOffsetByName(j, "CMapInfo", "m_iBuyingStatus");
+    CMapInfo.m_flBombRadius = findOffsetByName(j, "CMapInfo", "m_flBombRadius");
+    CMapInfo.m_iPetPopulation = findOffsetByName(j, "CMapInfo", "m_iPetPopulation");
+    CMapInfo.m_bUseNormalSpawnsForDM = findOffsetByName(j, "CMapInfo", "m_bUseNormalSpawnsForDM");
+    CMapInfo.m_bDisableAutoGeneratedDMSpawns = findOffsetByName(j, "CMapInfo", "m_bDisableAutoGeneratedDMSpawns");
+    CMapInfo.m_flBotMaxVisionDistance = findOffsetByName(j, "CMapInfo", "m_flBotMaxVisionDistance");
+    CMapInfo.m_iHostageCount = findOffsetByName(j, "CMapInfo", "m_iHostageCount");
+    CMapInfo.m_bFadePlayerVisibilityFarZ = findOffsetByName(j, "CMapInfo", "m_bFadePlayerVisibilityFarZ");
+    CMapInfo.m_bRainTraceToSkyEnabled = findOffsetByName(j, "CMapInfo", "m_bRainTraceToSkyEnabled");
+
     // Atribuições para C_PlantedC4
     // C_PlantedC4 Offsets
     C_PlantedC4.m_bBombTicking = findOffsetByName(j, "C_PlantedC4", "m_bBombTicking");
@@ -3661,6 +3690,7 @@ void parseAndAssignConstants(const std::string& jsonString)
     // soundsystem_dll Offsets
     soundsystem_dll.dwSoundSystem = findOffsetByName(j, "soundsystem_dll", "dwSoundSystem");
     soundsystem_dll.dwSoundSystem_engineViewData = findOffsetByName(j, "soundsystem_dll", "dwSoundSystem_engineViewData");
+
 }
 
 bool Offset::UpdateOffsets()
