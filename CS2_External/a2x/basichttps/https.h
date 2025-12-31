@@ -14,7 +14,6 @@
 #include <Wininet.h>
 #include <wininet.h>
 #include <string>
-#include "C:\Program Files (x86)\Windows Kits\10\Include\10.0.22000.0\um\wininet.h"
 #pragma comment(lib, "wininet.lib")
 
 using namespace std;

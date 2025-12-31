@@ -3,7 +3,7 @@
 void TriggerBot::Run(const CEntity& LocalEntity)
 {
 	DWORD uHandle = 0;
-	if (!ProcessMgr.ReadMemory<DWORD>(LocalEntity.Pawn.Address + Offset::C_CSPlayerPawnBase.m_iIDEntIndex, uHandle))
+	if (!ProcessMgr.ReadMemory<DWORD>(LocalEntity.Pawn.Address + Offset::C_CSPlayerPawn.m_iIDEntIndex, uHandle))
 		return;
 	if (uHandle == -1)
 		return;
@@ -14,7 +14,7 @@ void TriggerBot::Run(const CEntity& LocalEntity)
 		return;
 
 	DWORD64 PawnAddress = 0;
-	if (!ProcessMgr.ReadMemory<DWORD64>(ListEntry + 0x78 * (uHandle & 0x1FF), PawnAddress))
+	if (!ProcessMgr.ReadMemory<DWORD64>(ListEntry + 0x70 * (uHandle & 0x1FF), PawnAddress))
 		return;
 
 	CEntity Entity;
